@@ -1,0 +1,107 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    font-family: Helvetica;
+    background: rgb(32, 32, 39); 
+	color: rgb(255, 255, 255);
+	font-size: 15px;
+    /* line-height: 1.5; */
+    background-image: url('forest.jpg');
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(136, 125, 155);
+    height: 70px;
+    border-bottom: 1px solid black;
+    -webkit-box-shadow:0px 1px 1px #000000;
+    -moz-box-shadow:0px 1px 1px #000000;
+    box-shadow:0px 5px 6px #222425;
+    z-index: 1;
+}
+
+.navbar .title {
+    text-decoration: none;
+    list-style-type: none;
+    font-size: 25px;
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+    text-shadow: 5px 5px 10px #222425 ;
+}
+
+.container {
+    width: 600px;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(136, 125, 155);
+    line-height:40px;
+    font-family: Garamond, serif;
+    box-shadow: 0 4px 8px 0 #222425, 0 8px 28px 0 #222425;
+    border-radius: 4px;
+}
+
+.container img {
+    width: 70%;
+    height: auto;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+.container img:hover {
+    -webkit-animation:spin 1.5s linear infinite;
+    -moz-animation:spin 10s linear infinite;
+    animation:spin 3s linear infinite;
+}
+
+
+.upgradeSection {
+    background-color: rgb(136, 125, 155);
+    color: rgb(30, 24, 58);
+    width: 600px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 0;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    line-height:40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px 0 #222425, 0 8px 28px 0 #222425;
+    border-radius: 20px;
+}
+
+
+#upgradeBtn {
+    background-color: rgb(42, 45, 48);
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: Garamond, serif;
+    display: inline-block;
+}
+
+#upgradeBtn:hover {
+    background-color: rgb(60, 64, 68);
+
+}

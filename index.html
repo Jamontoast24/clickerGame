@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+
+        <nav class="navbar">
+            <ul>
+                <li class="title">Cat Clicker</li>
+            </ul>
+        </nav>
+
+        <section class="container">
+            <h2 class="score">Your Score : <span id="scoreNum"></span></h2>
+            <h4>The more upgrades you buy the faster your score will go up!<span id="catsPerSecond"></span></h4>
+
+            <img id="catImg " src="cat.png" class="clickerBtn">
+
+            <form class="clicker" onsubmit="return false">
+                <h3>Click the cat ! </h3>
+                
+            </form>
+        </section>
+
+        <section class="upgradeSection" onsubmit="return false">
+            <form>
+                <button class="upgradeOne" id="upgradeBtn" onclick="applyUpgradeOne()"></button>
+                <button class="upgradeTwo" id="upgradeBtn" onclick="applyUpgradeTwo()"></button>
+                <button class="upgradeThree" id="upgradeBtn" onclick="applyUpgradeThree()"></button>
+                <button class="upgradeFour" id="upgradeBtn" onclick="applyUpgradeFour()"></button>
+            </form>
+        </section>
+        
+        <script src="app.js" async defer></script>
+    </body>
+</html>
