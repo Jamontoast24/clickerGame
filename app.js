@@ -51,23 +51,20 @@ let upgradePercentageIncrease = 8
 
 //Create a class that contains all the data about upgrades
 class Upgrades {
-    constructor(name,description,scoreMultiplier,cost) {
+    constructor(name,description,scoreMultiplier,cost,quantity) {
         this.name = name
         this.description = description
         this.scoreMultiplier = scoreMultiplier
         this.cost = cost
+        this.quantity = quantity
     }
     manageBtns() {
-        console.log(this.name)
-        console.log(this.scoreMultiplier)
-        console.log(this.cost)
         if (displayScore.innerHTML >= this.cost){
-
             intervalSpeed = intervalSpeed - this.scoreMultiplier
             stopAndStartIntervalCounter()
             displayScore.innerHTML = displayScore.innerHTML - this.cost
             this.cost = this.cost + (this.cost/100).toFixed(2) * upgradePercentageIncrease
-            console.log(this.cost)
+            this.quantity++
         }
 
     }
@@ -75,44 +72,39 @@ class Upgrades {
 }
 
 //Create upgrades
-let upgradeOne = new Upgrades('Cat Treat', 'This magical cat treat makes Cat happy. It increases your cat\'s per second by ' ,15, 50)
-upgradeOneBtn.innerHTML = upgradeOne.name + ': ' + upgradeOne.cost + '$'
+let upgradeOne = new Upgrades('Cat Treat', 'This magical cat treat makes Cat happy. It increases your cat\'s per second by ' ,15, 50,0)
+upgradeOneBtn.innerHTML = upgradeOne.name + ': ' + upgradeOne.cost + '$' + '<br><br>' + 'x' + '0'
 document.querySelector('.upgradeOne').title = upgradeOne.description
-// upgradeOne.manageBtns()
 
-let upgradeTwo = new Upgrades('Mouse Plushie', 'A plushie that greatly increases the cat\'s happiness by ' , 30, 100)
-upgradeTwoBtn.innerHTML = upgradeTwo.name + ': ' + upgradeTwo.cost + '$'
+let upgradeTwo = new Upgrades('Mouse Plushie', 'A plushie that greatly increases the cat\'s happiness by ' , 30, 100,0)
+upgradeTwoBtn.innerHTML = upgradeTwo.name + ': ' + upgradeTwo.cost + '$' + '<br><br>' + 'x' + '0'
 document.querySelector('.upgradeTwo').title = upgradeTwo.description
-// upgradeTwo.manageBtns()
 
-let upgradeThree = new Upgrades('Magnificent Milk','Milk makes the cat enter a Hyper active frenzy. Be careful to monitor the intake ! Increases the cat\'s happiness by ' ,50, 150)
-upgradeThreeBtn.innerHTML = upgradeThree.name + ': ' + upgradeThree.cost + '$'
+let upgradeThree = new Upgrades('Magnificent Milk','Milk makes the cat enter a Hyper active frenzy. Be careful to monitor the intake ! Increases the cat\'s happiness by ' ,50, 150,0)
+upgradeThreeBtn.innerHTML = upgradeThree.name + ': ' + upgradeThree.cost + '$' + '<br><br>' + 'x' + '0'
 document.querySelector('.upgradeThree').title = upgradeThree.description
-// upgradeThree.manageBtns()
 
-let upgradeFour = new Upgrades('Box Bed', 'The cat loves the box bed. It calms the cat down and bring it extreme happiness. Increases the cat\'s happines by ' ,75, 300)
-upgradeFourBtn.innerHTML = upgradeFour.name + ': ' + upgradeFour.cost + '$'
+let upgradeFour = new Upgrades('Box Bed', 'The cat loves the box bed. It calms the cat down and bring it extreme happiness. Increases the cat\'s happines by ' ,75, 300,0)
+upgradeFourBtn.innerHTML = upgradeFour.name + ': ' + upgradeFour.cost + '$' + '<br><br>' + 'x' + '0'
 document.querySelector('.upgradeFour').title = upgradeFour.description
-// upgradeFour.manageBtns()
-
 
 //Create functions to run the object method depending on which button is clicked
 const applyUpgradeOne = () => {
     upgradeOne.manageBtns()
-    upgradeOneBtn.innerHTML = upgradeOne.name + ': ' + upgradeOne.cost + '$'
+    upgradeOneBtn.innerHTML = upgradeOne.name + ': ' + upgradeOne.cost + '$' +  '<br><br>' + 'x' + upgradeOne.quantity
 }
 
 const applyUpgradeTwo = () => {
     upgradeTwo.manageBtns()
-    upgradeTwoBtn.innerHTML = upgradeTwo.name + ': ' + upgradeTwo.cost + '$'
+    upgradeTwoBtn.innerHTML = upgradeTwo.name + ': ' + upgradeTwo.cost + '$' + '<br><br>' + 'x' + upgradeTwo.quantity
 }
 
 const applyUpgradeThree = () => {
     upgradeThree.manageBtns()
-    upgradeThreeBtn.innerHTML = upgradeThree.name + ': ' + upgradeThree.cost + '$'
+    upgradeThreeBtn.innerHTML = upgradeThree.name + ': ' + upgradeThree.cost + '$' + '<br><br>' + 'x' + upgradeThree.quantity
 }
 
 const applyUpgradeFour = () => {
     upgradeFour.manageBtns()
-    upgradeFourBtn.innerHTML = upgradeFour.name + ': ' + upgradeFour.cost + '$'
+    upgradeFourBtn.innerHTML = upgradeFour.name + ': ' + upgradeFour.cost + '$' + '<br><br>' + 'x' + upgradeFour.quantity
 }
