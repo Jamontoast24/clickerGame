@@ -101,7 +101,70 @@ body {
     display: inline-block;
 }
 
+.btn {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #upgradeBtn:hover {
     background-color: rgb(60, 64, 68);
 
+}
+
+@media (max-width: 767px) {
+
+    body {
+        height: 40%;
+    }
+
+    .navbar .title {
+        width: 90%;
+        font-size: 22px;
+        margin-top: 20%;
+        display: inline;
+    }
+
+    .container {
+        width: 80%;
+        font-size: 18px;
+        margin-top: 2%;
+    }
+
+    .upgradeSection {
+        width: 90%;
+        margin-top: 2%;
+    }
+
+}
+
+@media (min-width: 667px) and (max-width : 1024px) {
+
+    .navbar .title {
+        width: 90%;
+        font-size: 22px;
+        margin-top: 20%;
+    }       
+
+    .container {
+        width: 70%;
+        font-size: 18px;
+        margin-top: 2%;
+        line-height: 20px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    .navbar .title {
+        width: 90%;
+        font-size: 22px;
+        margin-top: 20%;
+        display: inline;
+    }  
+
+    .container {
+        width: 58%;
+        font-size: 18px;
+        margin-top: 2%;
+    }
 }
